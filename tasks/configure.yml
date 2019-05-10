@@ -1,8 +1,8 @@
 ---
 - name: Copy the Mailroom environment file
   template:
-    src: "{{ mailroom_config_template }}"
-    dest: "{{ mailroom_active_package_symlink }}/mailroom.toml"
+    src: "mailroom_active_package_symlink/environment.j2"
+    dest: "{{ mailroom_active_package_symlink }}/environment"
     owner: "{{ mailroom_system_user }}"
     group: "{{ mailroom_system_group }}"
     mode: 0750

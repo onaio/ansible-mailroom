@@ -15,19 +15,30 @@ mailroom_package_directory_root: "{{ mailroom_system_home }}/app-versioned"
 # The name to give the directory the Mailroom binary is copied to
 mailroom_package_directory_name: "{{ mailroom_version }}"
 mailroom_active_package_symlink: "{{ mailroom_system_home }}/app"
-mailroom_postgresql_url: "postgres://localhost/rapidpro"
-mailroom_redis_url: "http://localhost:6379/15"
-mailroom_address: "127.0.0.1"
-mailroom_port: 8081
-mailroom_log_level: "INFO"
-mailroom_sentry_dsn:
-mailroom_aws_access_key_id:
-mailroom_aws_secret_access_key:
-mailroom_s3_endpoint:
-mailroom_s3_region:
-mailroom_s3_disable_ssl: "false"
-mailroom_s3_force_path_style: "false"
-mailroom_s3_media_bucket:
-mailroom_librato_token:
-mailroom_librato_username:
-mailroom_config_template: "mailroom_active_package_symlink/mailroom.toml.j2"
+mailroom_environment_vars:
+  MAILROOM_ADDRESS: "127.0.0.1"
+  MAILROOM_ATTACHMENT_DOMAIN: "example.com"
+  MAILROOM_AUTH_TOKEN:
+  MAILROOM_AWS_ACCESS_KEY_ID:
+  MAILROOM_AWS_SECRET_ACCESS_KEY:
+  MAILROOM_BATCH_WORKERS: 4
+  MAILROOM_DB: "postgres://temba:temba@localhost/temba?sslmode=disable"
+  MAILROOM_DB_POOL_SIZE: 36
+  MAILROOM_DOMAIN: "example.com"
+  MAILROOM_FCM_KEY:
+  MAILROOM_HANDLER_WORKERS: 32
+  MAILROOM_LIBRATO_TOKEN:
+  MAILROOM_LIBRATO_USERNAME:
+  MAILROOM_LOG_LEVEL: "INFO"
+  MAILROOM_MAX_VALUE_LENGTH: 640
+  MAILROOM_PORT: 8090
+  MAILROOM_REDIS: "redis://localhost:6379/15"
+  MAILROOM_RETRY_PENDING_MESSAGES: "true"
+  MAILROOM_S3_DISABLE_SSL: "false"
+  MAILROOM_S3_ENDPOINT: "https://s3.amazonaws.com"
+  MAILROOM_S3_FORCE_PATH_STYLE: "false"
+  MAILROOM_S3_MEDIA_BUCKET: "mailroom-media"
+  MAILROOM_S3_MEDIA_PREFIX: "/media/"
+  MAILROOM_S3_REGION: "us-east-1"
+  MAILROOM_SENTRY_DSN:
+  MAILROOM_SMTP_SERVER: "smtp://user%40password@server:port/?from=foo%40gmail.com"
