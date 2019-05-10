@@ -28,9 +28,9 @@ def test_mailroom_app_files(host):
     assert appVersionedDir.is_directory
     assert oct(appVersionedDir.mode) == "0o755"
 
-    configFile = host.file("/home/mailroom/app/mailroom.toml")
-    assert configFile.exists
-    assert configFile.user == "mailroom"
-    assert configFile.group == "mailroom"
-    assert configFile.is_file
-    assert oct(configFile.mode) == "0o750"
+    envFile = host.file("/home/mailroom/app/environment")
+    assert envFile.exists
+    assert envFile.user == "mailroom"
+    assert envFile.group == "mailroom"
+    assert envFile.is_file
+    assert oct(envFile.mode) == "0o750"

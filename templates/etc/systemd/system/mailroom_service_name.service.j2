@@ -10,7 +10,7 @@ Type=simple
 ExecStart={{ mailroom_active_package_symlink }}/{{ mailroom_binary_name }}
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=on-failure
-WorkingDirectory={{ mailroom_active_package_symlink }}
+EnvironmentFile={{ mailroom_active_package_symlink }}/environment
 KillSignal=SIGINT
 
 [Install]
