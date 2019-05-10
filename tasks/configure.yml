@@ -1,0 +1,17 @@
+---
+- name: Copy the Mailroom environment file
+  template:
+    src: "{{ mailroom_config_template }}"
+    dest: "{{ mailroom_active_package_symlink }}/mailroom.toml"
+    owner: "{{ mailroom_system_user }}"
+    group: "{{ mailroom_system_group }}"
+    mode: 0750
+  notify:
+    - restart mailroom
+
+- name: Copy the Mailroom systemd unit File
+  template:
+    src: "etc/systemd/system/mailroom_service_name.service.j2"
+    dest: "/etc/systemd/system/{{ mailroom_service_name }}.service"
+  notify:
+    - restart mailroom

@@ -1,0 +1,33 @@
+---
+mailroom_version: "0.0.195"
+mailroom_system_user: "mailroom"
+mailroom_system_group: "mailroom"
+mailroom_service_name: "{{ mailroom_system_user }}"
+mailroom_system_home: "/home/{{ mailroom_system_user }}"
+# System architecture for the host. Possible value are:
+#   - linux_amd64
+#   - darwin_amd64
+mailroom_system_architecture: "linux_amd64"
+# The package repository to download Mailroom tarballs from
+mailroom_download_url: "https://github.com/nyaruka/mailroom/releases/download/v{{ mailroom_version }}/mailroom_{{ mailroom_version }}_{{ mailroom_system_architecture }}.tar.gz"
+# The root directory Mailroom versioned directories are created
+mailroom_package_directory_root: "{{ mailroom_system_home }}/app-versioned"
+# The name to give the directory the Mailroom binary is copied to
+mailroom_package_directory_name: "{{ mailroom_version }}"
+mailroom_active_package_symlink: "{{ mailroom_system_home }}/app"
+mailroom_postgresql_url: "postgres://localhost/rapidpro"
+mailroom_redis_url: "http://localhost:6379/15"
+mailroom_address: "127.0.0.1"
+mailroom_port: 8081
+mailroom_log_level: "INFO"
+mailroom_sentry_dsn:
+mailroom_aws_access_key_id:
+mailroom_aws_secret_access_key:
+mailroom_s3_endpoint:
+mailroom_s3_region:
+mailroom_s3_disable_ssl: "false"
+mailroom_s3_force_path_style: "false"
+mailroom_s3_media_bucket:
+mailroom_librato_token:
+mailroom_librato_username:
+mailroom_config_template: "mailroom_active_package_symlink/mailroom.toml.j2"

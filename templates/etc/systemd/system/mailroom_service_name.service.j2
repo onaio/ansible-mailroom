@@ -1,0 +1,17 @@
+
+[Unit]
+Description={{ mailroom_service_name }} service
+After=network.target
+
+[Service]
+User={{ mailroom_system_user }}
+Group={{ mailroom_system_group }}
+Type=simple
+ExecStart={{ mailroom_active_package_symlink }}/{{ mailroom_binary_name }}
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+WorkingDirectory={{ mailroom_active_package_symlink }}
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
