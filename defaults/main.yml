@@ -42,3 +42,4 @@ mailroom_environment_vars:
   MAILROOM_S3_REGION: "us-east-1"
   MAILROOM_SENTRY_DSN:
   MAILROOM_SMTP_SERVER: "smtp://user%40password@server:port/?from=foo%40gmail.com"
+  MAILROOM_ELASTIC: "http://localhost:9200"
